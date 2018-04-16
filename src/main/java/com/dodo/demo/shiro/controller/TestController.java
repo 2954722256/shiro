@@ -66,6 +66,11 @@ public class TestController {
         return "admin success";
     }
 
+    @RequestMapping("unauthorized")
+    public String unauthorized() {
+        return "unauthorized";
+    }
+
     @RequestMapping("/logout")
     public String logout() {
         System.out.println("logout");
