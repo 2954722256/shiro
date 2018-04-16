@@ -53,7 +53,7 @@ public class ShiroConfiguration {
     @Bean("authRealm")
     public AuthRealm authRealm(@Qualifier("credentialMatcher") CredentialMatcher matcher) {
         AuthRealm authRealm = new AuthRealm();
-        authRealm.setCacheManager(new MemoryConstrainedCacheManager());
+        authRealm.setCacheManager(new MemoryConstrainedCacheManager());     //对应CacheManager， 这里用的 Meneory的CacheManager
         authRealm.setCredentialsMatcher(matcher);
         return authRealm;
     }
