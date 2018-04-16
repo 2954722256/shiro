@@ -27,8 +27,9 @@ public class ShiroConfiguration {
         bean.setUnauthorizedUrl("/unauthorized");
 
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
-        filterChainDefinitionMap.put("/index", "authc");
-        filterChainDefinitionMap.put("/login", "anon");
+        filterChainDefinitionMap.put("/index", "authc"); //  【authc， 需要登录】
+        filterChainDefinitionMap.put("/login", "anon"); //  【anon， 不需要登录，可以访问】
+        filterChainDefinitionMap.put("/**", "user");    //所有action，  【user， 登录过，就可以访问】
 //        filterChainDefinitionMap.put("/loginUser", "anon");
 //        filterChainDefinitionMap.put("/admin", "roles[admin]");
 //        filterChainDefinitionMap.put("/edit", "perms[edit]");

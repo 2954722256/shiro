@@ -7,12 +7,19 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 import javax.servlet.http.HttpSession;
 
 @Controller
 public class TestController {
+
+    @RequestMapping("/")
+    @ResponseBody
+    public String indexString(){
+        return "just str， please visit  /index";
+    }
 
     @RequestMapping("/login")
     public String login() {
@@ -39,4 +46,21 @@ public class TestController {
             return "login";
         }
     }
+
+    @RequestMapping("/admin")
+    @ResponseBody
+    public String admin() {
+        return "admin success";
+    }
+
+    @RequestMapping("/logout")
+    public String logout() {
+//        Subject subject = SecurityUtils.getSubject();
+//        if (subject != null) {
+//            subject.logout();
+//        }
+        return "login";
+    }
+
+
 }
