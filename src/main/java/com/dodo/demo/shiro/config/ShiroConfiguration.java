@@ -31,6 +31,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/login", "anon"); //  【anon， 不需要登录，可以访问】
         filterChainDefinitionMap.put("/error2", "anon"); //  【anon， 不需要登录，可以访问】
         filterChainDefinitionMap.put("/loginUser", "anon"); //  【anon， 不需要登录，可以访问，不然永远收不到请求，和处理】
+        filterChainDefinitionMap.put("/admin", "roles[admin]");    //所有action，  【roles[xxx]， 登录过，就可以访问】
         filterChainDefinitionMap.put("/**", "user");    //所有action，  【user， 登录过，就可以访问】
 //        filterChainDefinitionMap.put("/loginUser", "anon");
 //        filterChainDefinitionMap.put("/admin", "roles[admin]");

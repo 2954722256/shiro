@@ -40,8 +40,8 @@ public class AuthRealm extends AuthorizingRealm {
             }
         }
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        info.addStringPermissions(permissionList);
-        info.addRoles(roleNameList);
+        info.addStringPermissions(permissionList);  //如果只是做权限管理，只添加 StringPermissions即可
+        info.addRoles(roleNameList);    //需要角色 权限管理， 添加对应的角色 管理
         return info;
     }
 
