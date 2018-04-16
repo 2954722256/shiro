@@ -18,23 +18,33 @@ public class TestController {
     @RequestMapping("/")
     @ResponseBody
     public String indexString(){
+        System.out.println("indexString");
         return "just str， please visit  /index";
     }
 
     @RequestMapping("/login")
     public String login() {
+        System.out.println("login");
         return "login";
     }
 
     @RequestMapping("/index")
     public String index() {
+        System.out.println("index");
         return "index";
+    }
+
+    @RequestMapping("/error2")
+    public String error() {
+        System.out.println("error2");
+        return "error2";
     }
 
     @RequestMapping("/loginUser")
     public String loginUser(@RequestParam("username") String username,
                             @RequestParam("password") String password,
                             HttpSession session) {
+        System.out.println("loginUser");
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         Subject subject = SecurityUtils.getSubject();
         try {
@@ -43,22 +53,26 @@ public class TestController {
             session.setAttribute("user", user);
             return "index";
         } catch (Exception e) {
-            return "login";
+//            return "login";
+            System.out.println(""+e.getMessage());
+            return "error2";
         }
     }
 
     @RequestMapping("/admin")
     @ResponseBody
     public String admin() {
+        System.out.println("admin");
         return "admin success";
     }
 
     @RequestMapping("/logout")
     public String logout() {
-//        Subject subject = SecurityUtils.getSubject();
-//        if (subject != null) {
-//            subject.logout();
-//        }
+        System.out.println("logout");
+        Subject subject = SecurityUtils.getSubject();
+        if (subject != null) {
+            subject.logout();
+        }
         return "login";
     }
 

@@ -29,6 +29,8 @@ public class ShiroConfiguration {
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/index", "authc"); //  【authc， 需要登录】
         filterChainDefinitionMap.put("/login", "anon"); //  【anon， 不需要登录，可以访问】
+        filterChainDefinitionMap.put("/error2", "anon"); //  【anon， 不需要登录，可以访问】
+        filterChainDefinitionMap.put("/loginUser", "anon"); //  【anon， 不需要登录，可以访问，不然永远收不到请求，和处理】
         filterChainDefinitionMap.put("/**", "user");    //所有action，  【user， 登录过，就可以访问】
 //        filterChainDefinitionMap.put("/loginUser", "anon");
 //        filterChainDefinitionMap.put("/admin", "roles[admin]");
