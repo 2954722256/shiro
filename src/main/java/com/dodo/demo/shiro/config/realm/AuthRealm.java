@@ -1,4 +1,4 @@
-package com.dodo.demo.shiro.config;
+package com.dodo.demo.shiro.config.realm;
 
 import com.dodo.demo.shiro.model.Permission;
 import com.dodo.demo.shiro.model.Role;
