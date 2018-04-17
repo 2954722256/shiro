@@ -34,6 +34,8 @@ public class TestController {
         return "index";
     }
 
+
+
     @RequestMapping("/error2")
     public String error() {
         System.out.println("error2");
@@ -64,6 +66,12 @@ public class TestController {
     public String admin() {
         System.out.println("admin");
         return "admin success";
+    }
+
+    @RequestMapping("/edit")
+    @ResponseBody
+    public String edit() {
+        return "edit success";
     }
 
     @RequestMapping("unauthorized")
